@@ -1,0 +1,21 @@
+<%- include('../layouts/header', {title: 'Administrador'}); -%>
+
+<div class="row">
+  <h1 class="alert alert-success text-center">Interfaz de administrador</h1>
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div class="card text-center border-dark">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <a class="btn btn-info w-100" href="admin/juices/create">Jugos</a>
+        </li>
+        <li class="list-group-item">
+          <a class="btn btn-info w-100" href="admin/users/users">Usuarios</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+
+<%- include('../layouts/footer'); -%>

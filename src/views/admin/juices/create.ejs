@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create new Televisions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1 class="alert alert-success">Create new Televisions</h1>
+    <div class="row">
+      <div class="col-md-2"></div>
+          <div class="col-md-8">
+              <!-- Formulario -->
+              <form method="POST" action="/admin/products/store" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <label for="television_name" class="form-label">Nombre del televisor</label>
+                  <input name="television_name" type="text" class="form-control" id="television_name">
+                </div>
+                <div class="mb-3">
+                  <label for="television_reference" class="form-label">Referencia del Televisor</label>
+                  <input name="television_reference" type="text" class="form-control" id="television_reference">
+                </div>
+                <div class="mb-3">
+                    <label for="television_size" class="form-label">Tamaño del Televisor</label>
+                    <input name="television_size" type="text" class="form-control" id="television_size">
+                  </div>
+                  <div class="mb-3">
+                    <label for="television_description" class="form-label">Descripcion del Televisor</label>
+                    <input name="television_description" type="text" class="form-control" id="television_description">
+                  </div>
+                    <div class="mb-3">
+                      <label for="television_image" class="form-label">Imagen del Televisor</label>
+                      <input type="file" name="television_image" class="form-control" id="television_image">
+                    </div>
+                    <div class="mb-3">
+                      <label for="category_id">Selecciona una opcion</label>
+                      <select name="category_id" id="category_id">
+                        <% categories.map( (category) =>{%>
+                        <option value="<%=category.category_id%>"><%=category.category_name%></option>
+                        <% }) %>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="television_price" class="form-label">Precio del Televisor</label>
+                      <input type="number" name="television_price" class="form-control" id="television_price">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+          </div>
+      <div class="col-md-2"></div>
+  </div>
+  </body>
+</html>
