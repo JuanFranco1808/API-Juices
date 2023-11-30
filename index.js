@@ -1,5 +1,6 @@
 //Librerias externas
 require("dotenv").config();
+const { accessLog } = require("./src/middlewares/access.log");
 
 //Crear un servidor básico de Express
 const express = require("express");
@@ -36,10 +37,7 @@ routerApi(app);
 
 //prueba
 app.get("/", (req, res) => {
-  res.render("index");
-});
-
-app.get("/admin", (req, res) => {
+  accessLog(req.method, req.path);
   res.render("admin/index");
 });
 

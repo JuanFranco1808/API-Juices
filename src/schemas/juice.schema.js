@@ -1,30 +1,30 @@
 const Joi = require('joi');
 
 const id = Joi.number()
-const juiceName = Joi.string().min(5).max(255)
-const juiceSize = Joi.string().min(5).max(255)
-const juiceFruit = Joi.string().min(4).max(255)
-const juiceDescription = Joi.string().min(5).max(100)
-const juicePrice = Joi.number()
+const name = Joi.string().min(3).max(255)
+const size = Joi.string().min(1).max(255)
+const fruit = Joi.string().min(4).max(255)
+const description = Joi.string().min(4).max(100)
+const price = Joi.number()
 
 const createSchema = Joi.object({
-    juiceName: juiceName.required(),
-    juiceSize: juiceSize.required(),
-    juiceFruit: juiceFruit.required(),
-    juiceDescription: juiceDescription.required(),
-    juicePrice: juicePrice.required()
+    name: name.required(),
+    size: size.required(),
+    fruit: fruit.required(),
+    description: description.required(),
+    price: price.required()
 });
 
 const updateSchema = Joi.object({
-    juiceName: juiceName.optional(),
-    juiceSize: juiceSize.optional(),
-    juiceFruit: juiceFruit.optional(),
-    juiceDescription: juiceDescription.optional(),
-    juicePrice: juicePrice.optional()
+    name: name.optional(),
+    size: size.optional(),
+    fruit: fruit.optional(),
+    description: description.optional(),
+    price: price.optional()
 });
 
 const getSchema = Joi.object({
-    id: id.required()
+    id: id.optional()
 });
 
 module.exports = {
